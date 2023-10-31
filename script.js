@@ -41,3 +41,29 @@ console.log(greeting)
 
 const g = "Hello";
 g = "Hi";
+
+//escopo, variaveis declaradas fora do escopo possuem acesso global no código, mas quando sao declaradas dentro
+//estas são acessíveis apenas dentro deste escopo
+
+let altura = 180;
+{
+    let peso = 70;
+    console.log(altura); // -> 180
+    console.log(peso); // -> 70
+}
+console.log(altura); // -> 180
+console.log(peso); // -> Uncaught ReferenceError: weight is not defined -> "peso" so pode ser acessada dentro do
+                  //escopo ou das chaves
+
+var n = 180;
+{
+    var n = 70;
+    console.log(n); // -> 180
+    console.log(t); // -> 70
+}
+console.log(n); // -> 180
+console.log(t); // -> 70
+
+//no caso do tipo var, nao há problema com a declaracao dentro do escopo, pois mesmo dentro do escopo, ela acaba
+//sendo acessadas globalmente, já que var ignora os escopos, tratando-os como se nao existissem 
+//para isso este tipo acaba sendo indicado para ser usado nas functions
