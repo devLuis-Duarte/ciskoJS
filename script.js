@@ -74,4 +74,21 @@ function testFunction(){
     console.log("World")
 }
 
-console.log(testFunction)
+testFunction();
+
+var globalGreeting = "Good"
+
+function greetingFunction(){
+    var localGreeting = "Morning";
+    console.log("function:");
+    console.log(globalGreeting)
+    console.log(localGreeting)
+
+}
+
+greetingFunction();//chamada da função
+
+console.log("main program:");
+console.log(globalGreeting);
+//console.log(localGreeting);//-> Uncaught ReferenceError: localGreeting is not defined, a variavel do escopo
+                            //local nao pode ser acessada fora deste escopo
