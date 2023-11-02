@@ -69,10 +69,18 @@ console.log(n); // -> 50
 //functions ou funções servem para realizar pequenas tarefas a fim de solucionar problemas específicos
 //o nome da função vem logo após o termo function e pode conter parâmetro ou não, sendo passado no paranteses
 
+let value = 3;
+
 function testFunction(){
+    let value = 18;
+    console.log(value)//->embora haja uma variavel global acima da function com o mesmo nome desta, ele apresentara
+                      //o valor da variavel local e isso nao resulta em erros, pois as variaveis globais e locais
+                      //podem ter o mesmo name, além disso, poderia usar para variaveis do tipo var também
     console.log("Hello")
     console.log("World")
 }
+console.log(value);//aqui será apresentado o valor da variavel acessível, no caso, a variavel global com o valor
+                  //18
 
 testFunction();
 
