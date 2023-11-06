@@ -100,3 +100,49 @@ console.log("main program:");
 console.log(globalGreeting);
 //console.log(localGreeting);//-> Uncaught ReferenceError: localGreeting is not defined, a variavel do escopo
                             //local nao pode ser acessada fora deste escopo
+
+                            
+let rosePrice = 8;
+let roseQty = 70;
+let totalRosePrice = rosePrice * roseQty;
+
+console.log("Rose - unit Price: " +rosePrice + ", quantity: " +roseQty + ", value: " +totalRosePrice);
+
+let lilyPrice = 10;
+let lilyQty = 50;
+let totalLilyPrice = lilyPrice * lilyQty;
+
+console.log("Lily - unit Price: " +lilyPrice + ", quantity: " +lilyQty + ", value: " +totalLilyPrice);
+
+
+let tulipPrice = 2;
+let tulipQty = 120;
+let totalTulipPrice = tulipPrice * tulipQty;
+
+console.log("Tulip - unit Price: " +tulipPrice + ", quantity: " +tulipQty + ", value: " +totalTulipPrice);
+
+console.log("----------------------------------------------------------")
+
+const priceOfRose = 8;
+const qttyOfRose =  50;;
+const totalRoseValue = priceOfRose * qttyOfRose;
+
+console.log("Rose - unit Price: " +priceOfRose + ", quantity: " +qttyOfRose + ", value: " +totalRoseValue);
+
+const priceOfLily = 8;
+const qttyOfLily =  20;
+const totalLilyValue = priceOfLily * qttyOfLily;
+
+console.log("Lily - unit Price: " +priceOfLily + ", quantity: " +qttyOfLily + ", value: " +totalLilyValue);
+
+const priceOfTulip = 8;
+const qttyOfTulip =  50;
+const totalTulipValue = priceOfTulip * qttyOfTulip;
+
+console.log("Tulip - unit Price: " +priceOfTulip + ", quantity: " +qttyOfTulip + ", value: " +totalTulipValue);
+
+
+
+
+
+
