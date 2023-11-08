@@ -121,7 +121,7 @@ let totalTulipPrice = tulipPrice * tulipQty;
 
 console.log("Tulip - unit Price: " +tulipPrice + ", quantity: " +tulipQty + ", value: " +totalTulipPrice);
 
-console.log("----------------------------------------------------------")
+console.log("------------------------------------------------------")
 
 const priceOfRose = 8;
 const qttyOfRose =  50;;
@@ -141,8 +141,114 @@ const totalTulipValue = priceOfTulip * qttyOfTulip;
 
 console.log("Tulip - unit Price: " +priceOfTulip + ", quantity: " +qttyOfTulip + ", value: " +totalTulipValue);
 
+//tipos primitivos: Boolean, Number, BigInt, String, Symbol
+
+//boolean pode ser true ou false, ou seja, verdadeiro ou falso
+
+console.log("------------------------------------------------------")
+
+let isDataValid = true; 
+let isStringTooLong = false; 
+let isGameOver = false; 
+continueLoop = true; 
+console.log(false); // -> false 
+console.log(typeof false); // -> boolean 
+console.log(isDataValid); // -> true 
+console.log(typeof isDataValid); // -> boolean
+
+console.log("-------------------------------------------------------")
+
+//number representa os tipos de valores inteiros e fracionarios, ou seja, nao precisa especificar int, float ou double
+//este tipo permite operacoes como soma, adicao, subtracao e multiplicacao
+
+//pode ser representado nas formas decimais, hexadecimal (0x…), octal (0o...) or binary (0b...) 
+//ou exponencial onde ao inves de 9000, podemos escrever 9e3, e ao inves de 0.00123, pode escrever 123e-5
+
+//alem disso, ha tres valores especiais para este tipo: Infinity e Nan(not a number)
+//Nan retorna que uma operacao aritmetica nao pôde ser executada corretamente pq os valores nao sao do tipo number
+
+const year = 1991; 
+let delayInSeconds = 0.00016; 
+let area = (16 * 3.14); 
+let halfArea = area / 2; 
+console.log(year); // -> 1991; 
+console.log(typeof year); // -> number;
+
+let a = 1 / 0; 
+let b = -Infinity; 
+console.log(a); // -> Infinity 
+console.log(b); // -> -Infinity 
+console.log(typeof a); // -> number 
+console.log(typeof b); // -> number 
+let s = "it's definitely not a number"; 
+let numb = s * 10;
+console.log(n); // -> NaN 
+console.log(typeof n); // -> number
+
+console.log("-------------------------------------------------------")
+
+//BigInt serve para numeros inteiros muito extensos 
+//o number também pode ser usado como inteiro, mas o BigInt pode lidar com numeros inteiros maiores
+//no momento da divisao, por o BigInt ser um somente inteiro, o resultado acabara sendo um valor arredondado
+//BigInt possuem o sufixo "n"
+//nao pode realizar operacoes com BigInt e number, pois isso resultara em um erro como no exemplo comentado abaixo
+
+//let big3 = 1000n + 20; // -> Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
 
 
+let big = 1234567890000000000000n; 
+let big2 = 1n; 
+console.log(big); // -> 1234567890000000000000n 
+console.log(typeof big); // -> bigint 
+console.log(big2); // -> 1n 
+console.log(7n / 4n); // -> 1n
 
+console.log("-------------------------------------------------------")
 
+//String representa uma sequencia de caracteres que formam um pedaço de texto
+//uma operacao comum em textos é a concatenaçao que junta dois textos separados com "+"
+//Strings são imutaveis pois ao tentar alterar um valor estara criando outra String
+//os textos podem ser atribuido com aspas simples ou duplas
+//existem muitos metodos da classe String 
+
+//a interpolação de String permite tratar uma sequência de caracteres como um template
+//no qual se pode colocar valores em locais selecionados com o uso de aspas simples, $ e {}
+//exatamente assim '${variavel}.'
+
+let country = "Malawi";
+let continent = 'Africa';
+   
+console.log(country); // -> Malawi
+console.log(typeof country); // -> string
+console.log(continent); // -> Africa
+console.log(typeof continent); // -> string
+
+let message1 = "The vessel 'Mars' called at the port.";
+let message2 = 'Cyclone "Cilida" to pass close to Mauritius.';
+   
+console.log(message1); // -> The vessel 'Mars' called at the port.
+console.log(message2); // -> Cyclone "Cilida" to pass close to Mauritius.
+
+let test = "100" - "10";
+
+console.log(test); // -> 90
+console.log(typeof test); // -> number
+
+//interpolação de String
+let sentence = '${country} está localizado em ${continent}.'
+
+console.log(sentence)
+
+let river = "Mekong";
+let character = river.charAt(2);//retorna letra do texto da variavel que chama o metodo passando a posicao desejada, sendo que comeca em 0, então a 1 letra estará na posição 0
+let length = river.length;//retorna o tamanho da String
+let str = river.slice(2,6)//retorna apenas as letras que estiverem dentro do intervalo informado
+let data = "333.333.333";
+let arr = ['javascript', 'c#', 'php'];//este tipo de dado é chamado array e permite armazenar muitos dados
+
+console.log(character); // -> k
+console.log(length);
+console.log(str);
+console.log(data.split('.'))//retorna um array onde é informado dentro de '' o que se deseja remover da variavel que chama o metodo "split"
+console.log(arr)
 
