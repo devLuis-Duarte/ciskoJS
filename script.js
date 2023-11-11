@@ -212,7 +212,7 @@ console.log("-------------------------------------------------------")
 //existem muitos metodos da classe String 
 
 //a interpolação de String permite tratar uma sequência de caracteres como um template
-//no qual se pode colocar valores em locais selecionados com o uso de aspas simples, $ e {}
+//no qual se pode colocar valores em locais selecionados com o uso de crase, $ e {}
 //exatamente assim '${variavel}.'
 
 let country = "Malawi";
@@ -251,4 +251,197 @@ console.log(length);
 console.log(str);
 console.log(data.split('.'))//retorna um array onde é informado dentro de '' o que se deseja remover da variavel que chama o metodo "split"
 console.log(arr)
+
+console.log("-------------------------------------------------------")
+
+//O tipo undefined retorna esse valor para váriaveis com valores não atribuídos
+
+let declaredVar;
+console.log(typeof declaredVar); // -> undefined
+   
+declaredVar = 5;
+console.log(typeof declaredVar); // -> number
+   
+declaredVar = undefined;
+console.log(typeof declaredVar); // -> undefined
+   
+console.log(typeof notDeclaredVar); // -> undefined
+//console.log(notDeclaredVar); // -> Uncaught ReferenceError: notDeclared is not defined
+
+console.log("-------------------------------------------------------")
+
+//O tipo null retorna esse valor para váriaveis com valores null, ou seja, nulo podem ser interpretados como object
+
+let someResource;
+console.log(someResource); // -> undefined
+console.log(typeof someResource); // -> undefined
+   
+someResource = null;
+console.log(someResource); // -> null
+console.log(typeof someResource); // -> object
+
+console.log("-------------------------------------------------------")
+
+//a function String vai por padrão criar e retornar uma string vazia - primitiva ""
+//a function Number vai por padrão criar e retornar o valor 0
+//a function Boolean vai por padrão criar e retornar o valor false
+//a function BigInt precisa de um valor inicial para ser passado que é um valor inteiro
+
+
+const stri = String();
+const num = Number();
+const bool = Boolean();
+   
+console.log(str); // ->
+console.log(num); // -> 0
+console.log(bool); // -> false
+   
+const big1 = BigInt(42);
+console.log(big1); // -> 42n
+
+//conversão de number para string
+let nr = 42;
+let numberToString = String(nr);
+console.log(`tipo: ${typeof nr}, valor: ${nr}.`)
+
+//conversão de boolean para string
+let bl = true;
+let booleanToString = String(bl);
+console.log(`tipo: ${typeof booleanToString}, valor:${bl}`)
+
+//conversão de bigInt para string
+let bnr = 123n;
+let bigIntToString  = String(bnr);
+console.log(`tipo: ${typeof bigIntToString}, valor: ${bnr}`)
+
+//conversão de undefined para string
+let un = undefined;
+let undefinedToString = String(un);
+console.log(`tipo: ${typeof undefinedToString}, valor: ${un}`)
+
+//conversão de null para string
+let nll = null;
+let nullToString = String(nll);
+console.log(`tipo: ${typeof nullToString}, valor: ${nll}`)
+
+console.log("-------------------------------------------------------")
+
+//conversão de string para number, a partir do 3 exemplo, os números estão em notação científica 
+console.log(Number("11")); // -> 11
+console.log(Number("0x11")); // -> 17
+console.log(Number("0o11")); // -> 9
+console.log(Number("0b11")); // -> 3
+console.log(Number("12e3")); // -> 12000
+
+//conversão de Infinity e Nan(not a number) para number
+console.log(Number("Infinity"));// -> Infinity
+console.log(Number("text")); // -> NaN, incapaz de converter esta string para number
+
+//conversão de bigInt para number
+console.log(Number(14n)); // -> 14
+console.log(Number(123456789123456789123n)); // - > 123456789123
+456800000
+
+//conversão de boolean para number, onde true retorna 1 e false 0
+console.log(Number(true))//->1
+console.log(Number(false))//->0
+
+//conversão de undefined(indefinido) para number, onde o retorno para este é que não é um número, pois não é possível convertê-lo para um
+console.log(Number(undefined));//-> Nan(not a number)
+
+//conversão de null para number que retorna 0
+console.log(Number(null));//-> 0
+
+console.log("-------------------------------------------------------")
+
+//conversão de number para boolean
+console.log(Boolean(42)); //para variavéis com valores atribuídos, sempre o retorno será true
+console.log(Boolean(0)) //para variáveis com valores nulos ou não atribuídos, sempre o retorno será false
+console.log(Boolean(NaN)); // -> retorna false pelo valor passado não ser um número
+
+//conversão de string para boolean
+console.log(Boolean("text")); // -> true por ter um texto atribuído
+console.log(Boolean("")); // -> false por não ter nada atribuído
+   
+//conversão de undefined para boolean
+console.log(Boolean(undefined)); // -> false por o valor não ter um valor definido
+   
+//conversão de null para boolean
+console.log(Boolean(null)); // -> false por ser um valor nulo
+
+console.log("-------------------------------------------------------")
+
+//conversão de number, alguns em notação científica, para bigInt
+console.log(BigInt(11)); // -> 11n
+console.log(BigInt(0x11)); // -> 17n
+console.log(BigInt(11e2)); // -> 1100n
+
+//conversão de boolean para bigInt
+console.log(BigInt(true)); // -> 1n
+   
+//conversão de string para bigInt
+console.log(BigInt("11")); // -> 11n
+console.log(BigInt("0x11")); // -> 17n
+   
+//a conversão de null para bigInt resultará em erro, pois esse valor não é possível converter 
+//console.log(BigInt(null)); // -> Uncaught TypeError: Cannot convert null to a BigInt
+   
+//a conversão de undefined para bigInt resultará em erro, pois esse valor não é possível converter 
+//console.log(BigInt(undefined)); // -> Uncaught TypeError: Cannot convert undefined to a BigInt
+
+//a conversão de null para bigInt resultará em erro, pois esse valor não é um valor inteiro
+//console.log(BigInt(NaN)); // -> Uncaught RangeError: The number NaN cannot be converted to a BigInt because it is not an integer
+
+console.log("-------------------------------------------------------")
+
+//conversão implícita
+const str1 = 42 + "1";// o "+" concatena os valores por isso retornará 421
+console.log(str1); // -> 421
+console.log(typeof str1); // -> string
+   
+const str2 = 42 - "1"; // já aqui ocorrerá de fato a operação de subtração, pois o "-" é entendido como subtração
+console.log(str2); // -> 41
+console.log(typeof str2); // -> number
+
+console.log("-------------------------------------------------------")
+
+
+let v1 = true;
+let v1f = Boolean(true);
+let v2 = 34;
+let v2f = Number(32);
+let v3 = 111112222222222223333335555555n;
+let v3f = BigInt(1111122222222222233333355555333n);
+let v4 = "Olá";
+let v4f = String("Hello");
+let v5 = undefined;
+
+console.log(`tipo: ${typeof v1}, valor: ${v1}`);
+console.log(`tipo: ${typeof v1f}, valor: ${v1f}`);
+console.log(`tipo: ${typeof v2}, valor: ${v2}`);
+console.log(`tipo: ${typeof v2f}, valor: ${v2f}`);
+console.log(`tipo: ${typeof v3}, valor: ${v3}`);
+console.log(`tipo: ${typeof v3f}, valor: ${v3f}`);
+console.log(`tipo: ${typeof v4}, valor: ${v4}`);
+console.log(`tipo: ${typeof v4f}, valor: ${v4f}`);
+console.log(`tipo: ${typeof v5}, valor: ${v5}`);
+
+let st = "1234";
+let nu = Number(st);
+let bg = BigInt(nu);
+let bol = Boolean(bg);
+
+console.log(`${typeof st}, valor: ${st}`);
+console.log(`${typeof nu}, valor: ${st}`);
+console.log(`${typeof bg}, valor: ${nu}`);
+console.log(`${typeof bol}, valor: ${bg}`);
+
+conststr1 = 42 + + "1";
+conststr2 = 44 - "1";
+console.log(conststr1);
+console.log(conststr2);
+
+
+
+
 
