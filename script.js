@@ -441,7 +441,103 @@ conststr2 = 44 - "1";
 console.log(conststr1);
 console.log(conststr2);
 
+//os objects no javascript apresentam os "{}" e dentro delas são definidos os atributos deste objeto e seus valores como no exemplo abaixo
+//let obj = {};
+//console.log(typeof obj)
 
+let testObj = {
+    nr: 600,
+    str: "text"
+};
 
+let user1 = {
+    name: "Calvin",
+    surname: "Hart",
+    age: 66,
+    email: "CalvinMHart@teleworm.us"
+};
+console.log(testObj.nr);//uma maneira de acessar um atributo de um objeto
+console.log(testObj.str);
+console.log(user1.name);
+console.log(user1.age); // -> 66
+user1.age = 67;
+console.log(user1.age); // -> 67
 
+console.log(user1.email); // CalvinMHart@teleworm.us
+delete user1.email;//comando que deleta o atributo do objeto
+console.log(user1.email); // -> undefined
 
+//os arrays armazenam uma coleção de valores, mas não possuem nomes associados a eles como no caso dos objetos, onde é definido um atributo e passado seu valor
+//podemos acessar os elementos do array pelas "[]" onde dentro dele é indicado a posição do array que corresponde a um elemento, iniciando em 0
+//há posições nos arrays que podem ser vazias por não terem valores atribuídos 
+//arrays podem ter vários tipos dentro dos colchetes, além disso, também podem ter um array dentro de outro array
+//eles são interpretados como object
+
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let day = "Sun";
+console.log(days[0]); // -> Sun
+console.log(days[2]); // -> Tue
+console.log(days[5]); // -> Fri
+console.log(typeof days); // -> object
+console.log(typeof day); // -> string
+console.log(days instanceof Array); // -> true, pois a variável "days" é uma instância de um array
+console.log(day instanceof Array); // -> false, pois a variável "day" não é uma instância de um array
+//metodos do array
+let ppl = ["Alex", "Alvin", "Alice"];
+console.log(ppl);
+console.log(ppl.length);//-> length retorna o tamanho do array, ou seja, quantos elementos tem o array
+console.log(ppl.push("Alfred")); //-> Adiciona um novo elemento ao final do array
+console.log(ppl);
+console.log(ppl.length);
+console.log(ppl.unshift("Agatha"));
+console.log(ppl);
+console.log(ppl.length);
+console.log(ppl.pop()); //-> remove o último elemento do array
+console.log(ppl);
+console.log(ppl.length);
+console.log(ppl.shift()); //-> remove o primeiro elemento do array
+console.log(ppl);
+console.log(ppl.length);
+console.log(ppl.indexOf("Alvin")); //-> 1 que é a posição do elemento onde está "Mon" no array 
+ppl.reverse(); //-> reverte a ordem dos elementos do array
+console.log(ppl)
+let newPpl = ppl.slice(-1); // -> cria uma cópia do array sem afetar o original e no parâmetro é passado o intervalo a ser removido
+                        // o índice final não é excluído, ele apenas passa até ele, números negativos no começo do índice acessam o último elemento do array
+console.log(newPpl);
+let otherPpl = ["Barbara", "Bily", "Breno"];
+let allPpl = ppl.concat(otherPpl);
+console.log(allPpl);
+
+days[0] = "Sunday";
+console.log(days[0]); // -> Sunday
+
+let animals = [];
+console.log(animals[0]); // -> undefined
+animals[0] = "dog";
+animals[2] = "cat";
+console.log(animals[0]); // -> dog
+console.log(animals[1]); // -> undefined, ou seja, indefinido, pois não tem um elemento nesta posição com um valor atribuído
+console.log(animals[2]); // -> cat
+
+let names = [["Olivia", "Emma", "Mia", "Sofia"], ["William", "James", "Daniel"]];
+console.log(names[0]); // -> ["Olivia", "Emma", "Mia", "Sofia"], a posição 0 são os nomes dentro dos primeiros colchetes
+console.log(names[0][1]); // -> Emma
+console.log(names[1][1]); // -> James, a posição 1 são os nomes dos últimos colchetes
+
+let users =[
+    {
+    name: "Calvin",
+    surname: "Hart",
+    age: 66,
+    email: "CalvinMHart@teleworm.us"
+    },
+    {
+    name: "Mateus",
+    surname: "Silva",
+    age: 21,
+    email: "MateusSilva@dayrep.com"
+    }
+];// -> objeto dentro do array, com a criação de dois objetos dentro do array
+
+console.log(users[1].name); // -> Matheus
+console.log(users[1].age); // -> 21
