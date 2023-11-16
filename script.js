@@ -541,3 +541,115 @@ let users =[
 
 console.log(users[1].name); // -> Matheus
 console.log(users[1].age); // -> 21
+
+let ticket = {
+    stStation: "London",
+    endStation: "Manchester",
+    price: "$200.00",
+};
+console.log(`Starting Station:${ticket.stStation}, End Station:${ticket.endStation}, Price:${ticket.price}`)
+
+let person = {
+
+};
+
+person.name = "Lukas",
+person.surname = "Bittencourt"
+
+console.log(`${person.name}, ${person.surname}`);
+
+let books = [
+    {
+        title: "Speaking JavaScript",
+        author: "Axel Rauschmayer",
+        pages: 460,
+    },
+    
+    {
+        title: "Programming JavaScript Applications",
+        author: "Eric Elliott",
+        pages: 254,
+    },
+
+    {
+        title: "Understanding ECMAScript",
+        author: "Nicholas C",
+        pages: 352
+    }
+]
+
+let book = { // -> instanciando objeto para adicionar um novo livro
+    title: "Learning JavaScript Design Patterns", 
+    author: "Addy Osmani", 
+    pages: 254
+};
+
+books.push(book); // -> adicionando o novo livro ao array
+
+console.log(`${books.length}`);
+console.log(`${books[0].title}, ${books[0].author}, ${books[0].pages}`);
+console.log(`${books[1].title}, ${books[1].author}, ${books[1].pages}`);
+console.log(`${books[2].title}, ${books[2].author}, ${books[2].pages}`);
+console.log(`${books[3].title}, ${books[3].author}, ${books[3].pages}`);
+
+let newArray = books.slice(2);
+console.log(newArray);
+
+let remove1st = books.shift();
+//console.log(books)
+console.log(`${books.length}`);
+console.log(`${books[0].title}, ${books[0].author}, ${books[0].pages}`);
+console.log(`${books[1].title}, ${books[1].author}, ${books[1].pages}`);
+console.log(`${books[2].title}, ${books[2].author}, ${books[2].pages}`);
+
+let sumPages = books[0].pages + books[1].pages + books[2].pages;
+console.log(sumPages);
+
+let contacts = [
+    {
+      name: "Maxwell Wright",
+      phone: "(0191) 719 6495",
+      email: "Curabitur.egestas.nunc@nonummyac.co.uk"
+    },
+
+    {
+      name: "Raja Villarreal",
+      phone: "0866 398 2895",
+      email: "posuere.vulputate@sed.com"
+    },
+
+    {
+        name: "Helen Richards",
+        phone: "0800 1111",
+        email: "libero@convallis.edu",
+    },
+
+]
+
+let newContact = {
+     name: "Maisie Hayley", 
+     phone: "0913 531 3030",
+     email: "risus.Quisque@urna.ca"
+    };
+
+contacts.push(newContact);
+console.log(`name:${contacts[0].name}, phone:${contacts[0].phone}, email:${contacts[0].email}`);
+console.log(`name:${contacts[3].name}, phone:${contacts[3].phone}, email:${contacts[3].email}`);
+console.log(contacts.length - 1);
+
+
+"use strict";
+   
+const prefix = "username_";
+   
+let userName = "Jack";
+//const userName = "Adam";
+   
+let prefixedUserName;
+//const prefixedUserName;
+   
+userName = "John";
+prefixedUserName = prefix + userName;
+   
+console.log(prefixedUserName /*+ prefixedUserName2*/);
+//console.log(prefixedUserName2);
