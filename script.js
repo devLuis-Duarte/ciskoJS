@@ -624,7 +624,15 @@ let contacts = [
         email: "libero@convallis.edu",
     },
 
+    {
+        name: prompt("Name?"),
+        phone: prompt("phone?"),
+        email: prompt("e-mail?")
+    },
+
 ]
+
+
 
 let newContact = {
      name: "Maisie Hayley", 
@@ -653,3 +661,58 @@ prefixedUserName = prefix + userName;
    
 console.log(prefixedUserName /*+ prefixedUserName2*/);
 //console.log(prefixedUserName2);
+
+console.log(2 * 3 + 1);      // expected 7
+console.log(2 ** 4);       // expected 16
+console.log(5 * 1);       // expected 5
+console.log(8 ** 2  - 5 ** 2); // expected 39
+
+console.log(4 * 5 === 20); //"===" verifica se é do mesmo tipo e retorna true, caso contrário é false
+console.log(6 * 5 == "30");
+console.log(-17 != 0);
+console.log(25 != 1);
+console.log(2 + 2 * 2 != 4);
+
+console.log(true || false);
+console.log(false || !false);
+console.log(false || false || true);
+console.log(true || false || false && true);
+
+//interagindo com o usuário
+//caixas de diálogo: alert, confirm e prompt
+
+//alert
+// gera uma janela e passa nele apenas 1 parâmetro, podendo ser um number ou string 
+//a janela ficará na tela até que o usuário marque a opção "OK"
+//pode ser usado através do comando "window.alert" também
+
+alert("Hello, World!")
+window.alert(5 * 3)
+
+//confirm
+//gera uma janela e passa nele apenas 1 parâmetro, podendo ser um number ou string
+//diferente do "alert", a janela do confirm têm as opções de "confirmar" ou "cancelar"
+//dependendo da opção escolhida, o metódo retorna true quando for "Ok" ou false para "cancelar"
+//é mais indicado a ser usado para ações condicionais do usuário em um sistema ou programa
+
+let remove = confirm("Remove all data?");
+let message = remove ? "Deleting Data" : "Cancelled" //caso a opção escolhida seja "Ok" ele apresentará "Deleting Data", caso contrário "Cancelled"
+console.log(message);
+
+//prompt dialog box
+//gera uma janela e passa nele apenas 1 parâmetro, podendo ser um number ou string
+//é parecido com o confirm, mas diferente dele, a janela do promp pode ter mais de um parâmetro e o usuário pode inserir os valores na caixa de texto
+//caso o usuário passe o segundo parâmetro, a caixa de texto já será preenchida com esse valor
+
+let he = prompt("What is the box's height?");
+
+let wi = prompt("What is the box's width?");
+
+let le = prompt("What is the box's lenght?");
+
+//conversão dos valores inseridos para Number, caso o valor não seja um numer, ele apresentará como Nan ou "not a number"
+let heNumber = Number(he);
+let wiNumber = Number(wi);
+let leNumber = Number(le);
+let vol = heNumber * wiNumber * wiNumber;
+alert(vol);
