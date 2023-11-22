@@ -716,3 +716,104 @@ let wiNumber = Number(wi);
 let leNumber = Number(le);
 let vol = heNumber * wiNumber * wiNumber;
 alert(vol);
+
+//condição: if, else, else if e switch case
+
+//if(condição){}; 
+//a partir desta sintaxe pode-se ser realizado uma ação do programa mediante uma condição 
+//se esta for verdadeira o código inserido dentro das chaves é executado
+
+let isUserReady = confirm("Are you ready?");
+if (isUserReady){
+    console.log("User ready!");
+    alert("User ready!");
+}else {
+    console.log("User is not ready!");
+    alert("User is not ready!");
+}
+//else{};
+//esta condição é apenas acionada se a condição do if() não for satisfeita, logo não precisa de parâmetro, pois é true, e se não for, só poderá ser false e cair no else
+
+//else if
+//é utilizado quando há muitas condições a serem verificadas e precede o else{} e sucede o if(){}
+
+let number = prompt("Enter a number", 0);
+if (number < 10) {
+    alert("<10");
+} else if (number < 30) {
+    alert("<30");
+} else if (number < 60) {
+    alert("<60");
+} else if (number < 90) {
+    alert("<90");
+} else if (number < 100) {
+    alert("<100");
+} else if (number == 100) {
+    alert("100")
+} else {
+    alert(">100")
+}
+
+let aa = confirm("Start?");
+let bb = aa ? "here we go" : "ok, lets try another time";
+alert(bb);
+
+//switch case(condição){} é um pouco similar ao if() mas dentro das chaves é feito as verificações por meio de cases
+//cada case deve ter um "break" e no último o comando "default" que é quando ele não cair em nenhum case 
+
+let aNumber = prompt("Enter a number");
+let msg = aNumber > 90 && aNumber < 110 ? "Bingo" : "Miss";
+console.log(msg);
+if(aNumber > 90 && aNumber < 110){
+   alert("Bingo");
+} else {
+    alert("Miss");
+}
+
+let numb1 = prompt("Enter the first number");
+let op = prompt("Type the operation '+', '-', '/' or '*' ");
+let numb2 = prompt("Enter the second number");
+let result;
+numbOne = Number(numb1);
+numbTwo = Number(numb2);
+
+/*if(op == "+"){
+    result = numbOne + numbTwo;
+} else if(op == "-"){
+    result = numbOne - numbTwo;
+} else if(op == "/"){
+    result = numbOne / numbTwo;
+} else if(op == "*") {
+    result = numbOne * numbTwo;
+} else {
+    console.log("An error has ocurred")
+}
+if(!Number.isNaN(numbOne) && !Number.isNaN(numbTwo) && op == "+" || op == "-" || op == "/" || op == "*"){
+    console.log(result);
+}*/
+if(!Number.isNaN(numbOne) && !Number.isNaN(numbTwo)){
+    
+    switch(op){
+        case '+':
+            result = numbOne + numbTwo;
+            break;
+        case '-':
+            result = numbOne - numbTwo;
+            break;
+        case '/':
+            result = numbOne / numbTwo;
+            break;
+        case '*':
+            result = numbOne * numbTwo;
+            break;
+            default: result = "Error: Unknown operand";      
+    }
+} else {
+    result = "One value is not a number";
+}
+
+console.log(result);
+
+let vet = ["Abacaxi", "Banana", "Carambola", "Damasco", "Embaúba", "Framboesa", "Goiaba"];
+
+console.log(vet.copyWithin);
