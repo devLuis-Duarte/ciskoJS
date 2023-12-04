@@ -645,6 +645,52 @@ console.log(`name:${contacts[0].name}, phone:${contacts[0].phone}, email:${conta
 console.log(`name:${contacts[3].name}, phone:${contacts[3].phone}, email:${contacts[3].email}`);
 console.log(contacts.length - 1);
 
+let btContact = true;
+while(btContact){
+   let answer = prompt("type '1' to see the 1st contact or type '2' to see the 2nd contact or 'a' to see all the contacts or 'q' to quit");
+    if(answer == "q"){
+     btContact = false;
+     break;
+    }
+    if(answer == 1){
+     console.log(`Name: ${contacts[0].name}, E-mail: ${contacts[0].email}, Phone: ${contacts[0].phone}`);
+    } else if(answer == 2){
+     console.log(`Name: ${contacts[1].name}, E-mail: ${contacts[1].email}, Phone: ${contacts[1].phone}`);
+    } else if (answer == "a"){
+        for (let i = 0; i < contacts.length; i++){
+            console.log(`Name: ${contacts[i].name}, E-mail: ${contacts[i].email}, Phone: ${contacts[i].phone}`);
+        }
+    } else {
+        console.log("Type a valid command");
+    }
+}
+// switch(btContact){
+//     case 1: {
+//         console.log(contacts[0]);
+//         break;
+//     }
+//     case 2: {
+//         console.log(contacts[1]);
+//         break;
+//     }
+//     case a: {
+//         for(let i = 0; i < contacts.length; i++){
+//             console.log(contacts[i]);
+//         }
+//         break;
+//     }
+//     case 'q': {
+//         break;
+//     }
+
+//     default: {
+//          ("Type a valid char");
+//          break;
+//     }
+
+// }
+//}
+
 
 "use strict";
    
@@ -817,3 +863,138 @@ console.log(result);
 let vet = ["Abacaxi", "Banana", "Carambola", "Damasco", "Embaúba", "Framboesa", "Goiaba"];
 
 console.log(vet.copyWithin);
+
+//loops: while, do while e for
+
+//while: este comando permite a repetição por um loop a partir de uma condição quantas vezes forem necessárias
+//a variável condicional no while precisa ser inicializada antes do loop
+let nv = 0;
+while(nv < 91) {//enquanto "nv" for menorque 91, ele exibirá "nv"
+    console.log(nv); // -> 0, 10, 20, 30, 40, 50, 60, 70, 80, 90
+    nv += 10;
+}
+
+let over = false; //variável condicional incializada
+let cnt = 1;
+while(!over) { //enquanto for "true", ele repetirá a ação
+    over = !confirm(`[${cnt++}] Continue the loop?`);
+}
+//do while: este comando é muito semelhante ao while, porém no do while primeiro faz a ação e depois verifica com o uso do while
+//a variável condicional no do while não precisa ser incializada antes do loop, pois a condição é chamada depois da ação e assim a variável já terá um valor atribuído no do
+
+let isOver;
+let count = 1;
+do {
+    isOver = !confirm(`[${count++}] Continue the loop?`);
+} while (!isOver);
+
+//for: este comando de loop possui três parâmetros sendo o primeiro a variável de inicialização, o segundo a condição e o terceiro o incremento
+
+let values = [10, 30, 50, 100];
+let sum = 0;
+for (let i = 0; i < values.length; i++) {
+    sum += values[i];
+}
+console.log(sum); // -> 190
+
+//for of é usado com arrays e outras iterations, nesse for of, não necessita especificar nenhuma condição ou incrementação
+
+
+let val = [10, 30, 50, 100];
+let sm = 0;
+for (let number of val) {
+    sm += number;
+}
+console.log(sm); // -> 190
+
+let cities = [
+    { name: "New York", population: 18.65e6 },
+    { name: "Cairo", population: 18.82e6 },
+    { name: "Mumbai", population: 19.32e6 },
+    { name: "São Paulo", population: 20.88e6 },
+    { name: "Mexico City", population: 21.34e6 },
+    { name: "Shanghai", population: 23.48e6 },
+    { name: "Delhi", population: 25.87e6 },
+    { name: "Tokyo", population: 37.26e6 }
+];
+for (let city of cities) {
+    if (city.population > 20e6) {
+     console.log(`${city.name} (${city.population})`);
+    }
+}
+
+//for in permite percorrer os objetos e seus atributos. Percorre todos os atributos do objeto indicado, exibindo os atributos do objeto ou "keys"
+
+let user = {
+    name: "Calvin",
+    surname: "Hart",
+    age: 66,
+    email: "CalvinMHart@teleworm.us"
+};
+for (let key in user) {
+    console.log(key); // -> name, surname, age, email
+};
+
+//o comando break é usado para terminar a execução de um loop ou switch case a partir de uma condição especificada
+
+let i = 0;
+// An infinite loop
+while (true){
+    console.log(i);
+    i++;
+    if (i >= 5) {
+     break;
+    }
+}
+alert(`Exited the loop with a break (${i}).`);
+
+//"continue" permite a continuação do loop a partir de uma condição especificada pulando o valor da condiçao e continuando com os valores seguintes
+
+for (let i = 0; i < 10; i++) {
+    if (i == 3) {
+     continue;
+    }
+    console.log(i);
+}
+
+let upperLimit = Number(prompt("Enter upper limit"));
+let lowerLimit = Number(prompt("Enter lower limit"));
+
+if (!Number.isNaN(upperLimit) && !Number.isNaN(lowerLimit) && upperLimit > lowerLimit) {
+    for (i = upperLimit; i >= lowerLimit; i -= 10) {
+        console.log(i);
+    }
+}
+
+let btn;
+let movies;
+do{
+     movies = [{
+        title: prompt("Movie's title"),
+        imdb: Number(prompt("Movie's rating")),
+    }];
+    btn = !confirm("Continue the loop?")    
+
+}while(!btn)
+
+for(let i = 0; i < movies.length; i++){
+    if(btn == false){
+        if(movies[i].imdb < 7){
+            console.log(`${movies[i].title}` `${movies[i].imdb}`);
+        }
+    }
+}
+
+let vessel = {
+    latitude: 40.07288,
+    longitude: 154.48535,
+    course: 285.6,
+    speed: 14.0,
+    imo: 9175717,
+    nome: "mareno",
+};
+ 
+for( let key in vessel) { 
+    console.log(`${key} -> ${vessel[key]}`); 
+}
+
