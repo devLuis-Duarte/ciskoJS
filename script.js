@@ -999,3 +999,227 @@ for( let key in vessel) {
 }
 
 
+//functions: Possuem nome e são usadas para reutilizar pedaços de código em outro momentos no desenvolvimento e por isso é muito útil
+//as functions podem ter parâmetro ou não, assim como, podem ter retorno ou não
+//as functions normalmente são declaradas primeiro para depois serem chamadas, mas isso é apenas uma boa prática
+
+let personName = "Alice"
+function showName(){
+    console.log(personName);
+}
+
+showName();//->chamando a function que mostrará o nome atribuído
+
+// let temperatures;
+// let meanTemp;
+// function getMeanTemp() {
+//      let sum = 0;
+//      let result;
+//      for (let i = 0; i < temperatures.length; i++) {
+//       sum += temperatures[i];
+//      }
+//      result = sum / temperatures.length;
+//      return result;
+// }
+// temperatures = [12, 12, 11, 11, 10, 9, 9, 10, 12, 13, 15, 18, 21, 24, 24, 23, 25, 25, 23, 21, 20, 19, 17, 16];
+// meanTemp = getMeanTemp();
+// console.log(`mean: ${meanTemp}`);
+
+// let temperatures;
+// let meanTemp;
+// function getMeanTemp() {
+//      let sum = 0;
+//      for (let i = 0; i < temperatures.length; i++) {
+//       sum += temperatures[i];
+//      }
+//
+//      return sum / temperatures.length;
+// }
+// temperatures = [12, 12, 11, 11, 10, 9, 9, 10, 12, 13, 15, 18, 21, 24, 24, 23, 25, 25, 23, 21, 20, 19, 17, 16];
+// meanTemp = getMeanTemp();
+// console.log(`mean: ${meanTemp}`);
+
+function getMeanTemp(temperatures) {
+     let sum = 0;
+     for (let i = 0; i < temperatures.length; i++) {
+      sum += temperatures[i];
+     }
+     return sum/temperatures.length;
+}
+day = [12, 12, 11, 11, 10, 9, 9, 10, 12, 13, 15, 18, 21, 24, 24, 23, 25, 25, 23, 21, 20, 19, 17, 16];
+meanTemp = getMeanTemp(day);
+console.log(`mean: ${meanTemp}`);
+
+//validando dados para que retorne apenas o valor desejado
+function getMeantemp(temperatures){
+    if((!temperatures instanceof Array)){
+      return Nan;
+    }
+    let sum = 0;
+    for(let i = 0; i < temperatures.length; i++){
+      sum += temperatures[i];
+    }
+    return sum / temperatures.length;
+  }
+  
+  console.log(getMeantemp(10));//->'nan' ou not a number que significa que não é um número
+  console.log(getMeantemp([20, 20]))
+
+//função que permite calcula o fatorial de um número passado por parâmetro
+function factorial(n){
+    let result = 1;
+    do{
+      result *= n
+      n--;
+    }while(n > 1)
+  
+    return result
+  }
+  
+  console.log(factorial(6));
+
+//a mesma função acima só que com o uso de recursão que é um mecanismo matemático que permite simplificar a notação formal e apresentá-las de forma elegante
+
+  function factorial (n) {
+    return n > 1 ? n * factorial(n - 1) : 1;
+}
+
+console.log(factorial(6)); // -> 720
+
+//atribuindo a função a uma variável shm e ao chamá-la, também é chamada a função
+function showMessage(message) {
+    console.log(`Message: ${message}`);
+}
+
+let shm = showMessage;
+
+shm("This works!"); // -> Message: This works!
+console.log(typeof shm); // -> function
+
+//passando a function 'add' e 'multiply' como parâmetro da função 'operation' que também recebe dois valores que são passados pelas functions 'add' e 'multiply'
+function add(a, b) {
+    return a + b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+function operation(func, first, second) {
+    return func(first, second);
+}
+
+console.log(operation(add, 10, 20)); // -> 30
+console.log(operation(multiply, 10, 20)); // -> 200
+
+function operation(func, first, second) {
+    return func(first, second);
+}
+
+//declarando função dentro da variável myAdd
+let myAdd = function(a, b) {
+    return a + b;
+}
+
+console.log(operation(myAdd, 10, 20)); // -> 30
+
+console.log(operation(function(a, b) {
+    return a * b;
+}, 10, 20)); // -> 200
+
+//calback functions permite executar uma função depois de uma ação
+//é um conceito fundamental para entender a parte assíncrona do JS
+
+function exibir(resultado){
+    console.log("O resultado da operação e:" +resultado);
+}
+function somar(a, b, callback){
+    var op = a + b;
+    callback(op);
+}
+
+function multiplicar(a, b, cb){ //cb é callback
+    var op = a * b;
+    cb(op);
+}
+
+somar(2,2, exibir);
+multiplicar(3,5, exibir);
+
+//setTimeout e setInterval
+//podemos com estas criar ações no software que executam depois de um tempo ou de tempos em tempos
+//um dos argumentos destas funções é uma callback function
+//diferente da callback function síncrona que executa a ação conforme o fluxo do código, a callback function assínncrona executa depois de um certo tempo
+
+//setTimeout executa a ação dentro de um tempo especificado
+setTimeout(function(){
+    console.log("testando");
+}, 5000); //especificado o tempo em ms, onde 1000ms equivale a 1 segundo
+
+//setInterval executa a ação dentro de um tempo e intervalo de vezes especificado
+setInterval(function(){
+
+}, 1000)
+
+//arrow function
+//são formas mais simples e curtas da expressão de uma função
+//é composta por parenteses contendo de 0 a muitos parâmetros e seguida por uma flecha '=>'
+//se tiver apenas um parâmetro, os parenteses podem ser omitidos
+//se a arrow function tiver apenas uma instrução no retornar seu valor, o return poderá ser omitido e o valor será adicionado implicitamente
+
+let numbers = [50, 10, 40, 30, 20];
+let retVal = 0;
+let compareNumbers = (a, b) => a < b ? retVal = -1 : retVal = 1;{
+}
+let sorted = numbers.sort(compareNumbers);
+console.log(sorted); // [10, 20, 30, 40, 50]
+
+
+function check(value){
+    if(Number.isInteger(value)){
+      console.log("The result of the operation is:" +value);
+    } else {
+      console.log(NaN);
+    }
+  }
+  function add(a, b, callback){
+    result = a + b;
+    callback(result);
+  }
+  function sub(a, b, cb){
+      result = a - b;
+      cb(result);
+      
+  }
+  function multiply(a, b, callback){
+    result = a * b;
+    callback(result);
+  }
+  function divide(a, b, cb){
+    if(a && b != 0){
+    result = a / b;
+    }else {
+      result = 0;
+    }
+    cb(result);
+  }
+  add(5, 5, check);
+  sub(4, 2, check);
+  multiply(5, 6, check);
+  divide(4, 4, check);
+
+let add = (a, b) => Number.isInteger(a && b) ? a + b : "Nan";
+
+console.log(add(5, 4));
+
+let sub = (a,b) => Number.isInteger(a && b) ? a - b : "Nan";
+
+console.log(sub(5, 4));
+
+let multiply = (a,b) => Number.isInteger(a && b) ? a * b : "Nan";
+
+console.log(multiply(5,4));
+
+let divide = (a,b) => Number.isInteger(a && b) ? a / b : "Nan";
+
+console.log(divide(5,4));
