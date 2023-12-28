@@ -1208,18 +1208,95 @@ function check(value){
   multiply(5, 6, check);
   divide(4, 4, check);
 
-let add = (a, b) => Number.isInteger(a && b) ? a + b : "Nan";
+let adic = (a, b) => Number.isInteger(a && b) ? a + b : "Nan";
 
 console.log(add(5, 4));
 
-let sub = (a,b) => Number.isInteger(a && b) ? a - b : "Nan";
+let subr = (a,b) => Number.isInteger(a && b) ? a - b : "Nan";
 
 console.log(sub(5, 4));
 
-let multiply = (a,b) => Number.isInteger(a && b) ? a * b : "Nan";
+let multip = (a,b) => Number.isInteger(a && b) ? a * b : "Nan";
 
 console.log(multiply(5,4));
 
-let divide = (a,b) => Number.isInteger(a && b) ? a / b : "Nan";
+let divid = (a,b) => Number.isInteger(a && b) ? a / b : "Nan";
 
 console.log(divide(5,4));
+
+//errors e exceptions
+//errors são erros em trechos de código que são detectados antes mesmo de o programa ser executado
+//exceptions são exceções ou error que ocorrem durante a execução do código 
+//algumas vezes o código poderá não será executado apenas por um pequen erro de código, mas isto pode ser tratado com o uso do try...catch
+
+/*console.log('abc'); // -> abc
+conole.log('def'); // -> Uncaught ReferenceError: conole is not defined. Trecho errado do código
+console.log('ghi');*/
+
+//o try...catch é uma estrutura numa linguagem que permite a execução de um código com potencial de falha
+
+try { //tenta executar isso caso o trecho de código tenha potencial de falha
+    console.log('abc'); // -> abc
+    conole.log('abc');
+} catch (error) {  //caso o código dê erro, ele executa este trecho de código 
+    console.log(error.message); // -> conole is not defined. Assim o código será executado e aaverá o tratamento do erro
+}
+
+//finally é o trecho de código que sempre será executado e pode ser usado junto com try e catch
+//o finally sempre será executado e não deixará que um erro escape do catch
+let a1 = 10;
+try {
+    a1 = b;  // ReferenceError
+} catch (error) {
+    console.log("An Error!"); // -> An Error!
+} finally {
+    console.log("Finally!"); // -> Finally!
+}
+console.log(a1); // -> 10
+
+
+//ReferenceError: erro de variável indefinida
+// let x;
+// try{
+//   x = y + 1; //erro, pois 'y' não foi definido 
+// }catch(error){
+//   console.log("Error's name:", error.name);
+//   console.log("Error's message:", error.message)
+// }
+
+ //SyntaxError: erro de sintaxe de variáveis
+//  let x;
+//  try{
+//    eval("alert(hello')"); //erro, pois a sintaxe está errada faltando abrir as aspas 
+//  }catch(error){
+//    console.log("Error's name:", error.name);
+//    console.log("Error's message:", error.message)
+//  }
+
+ //TypeError: erro de tipo de variável
+//  let num = 1;
+//  try{
+//    num.toUpperCase(); //erro, pois o metódo toUpperCase é usado para String e não numbers 
+//  }catch(error){
+//    console.log("Error's name:", error.name);
+//    console.log("Error's message:", error.message)
+//  }
+
+    //erro personalizado através de um uso de uma function "UserException" e no try usa o comando throw new UserException(name) passando a msg do erro
+// function UserException(message){
+//     this.message = message;
+//     this.name = "UserException";
+//   }
+  
+//   try{
+//     let numero = -6;
+//     if(numero < 0){
+//       throw new UserException("o numero deve ser positivo") passando a msg no parâmetro;
+//     }else{
+//     console.log('ok');
+//    }
+//   }catch(error){
+//     console.log("Name:", error.name);
+//     console.log("Message:", error.message);
+//   }
+
